@@ -8,3 +8,7 @@ war3observer-*.zip
 
 .vscode/
 *.sublime-*
+
+result
+.direnv
+.wine
