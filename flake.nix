@@ -26,6 +26,9 @@
               python-pkgs.pip
               python-pkgs.pyinstaller
             ]))
+            (pkgs.writeShellScriptBin "mkexe" ''
+              wine "$WINEPREFIX/drive_c/users/$USER/AppData/Local/Programs/Python/Python313/Scripts/pyinstaller.exe" ${self}/war3observer.py --noconfirm
+            '')
           ];
           shellHook = ''
             export WINEPREFIX="$(pwd)/.wine"

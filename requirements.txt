@@ -1,2 +1,1 @@
-websockets
-git+https://github.com/sides/war3structs.git
+git+https://github.com/clemenscodes/war3structs.git
