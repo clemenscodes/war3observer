@@ -15,7 +15,6 @@ class Game():
     self.refresh_rate_offset = self.version_offset + self.integer_size
     self.game_offset = self.refresh_rate_offset
     self.players_offset = self.game_offset + self.game_size
- 
     self.file_size = self.find_correct_mmap_size()
     self.set_refresh_rate()
 
@@ -25,14 +24,14 @@ class Game():
     best = 0
 
     while low <= high:
-        mid = (low + high) // 2
-        try:
-            mm = MemoryMap(self.file_offset, mid)
-            mm.close()
-            best = mid
-            low = mid + 1
-        except (OSError, ValueError):
-            high = mid - 1
+      mid = (low + high) // 2
+      try:
+        mm = MemoryMap(self.file_offset, mid)
+        mm.close()
+        best = mid
+        low = mid + 1
+      except (OSError, ValueError):
+        high = mid - 1
 
     print(f"✅ Detected mmap size: {best}")
     return best
@@ -59,5 +58,5 @@ class Game():
     mm = MemoryMap(self.file_offset, self.file_size)
     data = mm.data()
     with open("observer_api.bin", "wb") as out:
-        out.write(data)
+      out.write(data)
     mm.close()

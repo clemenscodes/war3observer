@@ -33,10 +33,12 @@
       ${system} = {
         default = pkgs.mkShell {
           buildInputs = [
-            (pkgs.python3.withPackages (python-pkgs: [
-              python-pkgs.pip
-              python-pkgs.pyinstaller
-            ]))
+            (pkgs.python3.withPackages (python-pkgs:
+              with python-pkgs; [
+                pip
+                pyinstaller
+                setuptools
+              ]))
             pkgs.wineWow64Packages.stagingFull
             mkexe
             runexe
