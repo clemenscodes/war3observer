@@ -1,6 +1,6 @@
 import struct
 from war3observer.memory_map import MemoryMap
-from war3structs.observer import ObserverGame, ObserverFile
+from war3observer.structs import ObserverGame, ObserverFile
 
 class Game():
   def __init__(self):

@@ -1,2 +1,2 @@
 pyinstaller
-git+https://github.com/clemenscodes/war3structs.git
+construct

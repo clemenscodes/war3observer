@@ -37,6 +37,7 @@
               with python-pkgs; [
                 pip
                 pyinstaller
+                construct
                 setuptools
               ]))
             pkgs.wineWow64Packages.stagingFull
